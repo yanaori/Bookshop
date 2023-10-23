@@ -1,0 +1,50 @@
+@import "variables";
+
+header {
+    max-width: 100%;
+    display: flex;
+    padding: 3% 0;
+    justify-content: center;
+    position: sticky;
+    top: 0px;
+    background-color: #fff;
+
+
+    .logo {
+        color: $text-black;
+        font-family: Montserrat;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .list {
+        display: flex;
+        gap: 10.5%;
+        width: 26%;
+        margin-top: 0.4%;
+        margin-left: 2%;
+
+        .list__item {
+            color: $text-grey;
+            font-family: Montserrat;
+            font-size: 10px;
+            font-style: normal;
+            font-weight: 900;
+            line-height: normal;
+            text-transform: uppercase;
+        }
+
+    }
+
+    .icons {
+        gap: 32%;
+        width: 11%;
+        display: flex;
+        margin-top: 0.5%;
+        padding-left: 2.8%;
+
+    }
+
+}
