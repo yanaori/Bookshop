@@ -10,6 +10,7 @@ const entities = [
 
 const mainSliderImage = document.querySelectorAll('.main_slider-image');
 const mainSliderDots = document.querySelectorAll('.main_slider-dot');
+let cards;
 
 let currentSlide = 0;
 
@@ -59,6 +60,41 @@ showSlide(currentSlide);
 
 
 
+
+const basketItems = {};
+const basketCount = document.querySelector('.basket_count'); 
+// Функция для обновления количества книг в корзине и видимости .basket_count
+function updateBasketCount() {
+    const itemCount = Object.keys(basketItems).length;
+    basketCount.textContent = itemCount;
+
+      // Обновляем видимость .basket_count
+      if (itemCount > 0) {
+        basketCount.style.display = 'block'; // Показываем .basket_count при наличии товаров
+    } else {
+        basketCount.style.display = 'none'; // Скрываем .basket_count при пустой корзине
+    }
+}
+// Функция для добавления книги в корзину
+function addCardToBasket(book, buttonBuy) {
+    const bookCard = buttonBuy.closest('.book-card');
+    const title = bookCard.querySelector('.title').textContent;
+
+    if (basketItems[title]) {
+        // Если книга уже в корзине, убираем ее
+        delete basketItems[title];
+        buttonBuy.textContent = 'buy now';
+    } else {
+        // Если книги нет в корзине, добавляем ее
+        basketItems[title] = book;
+        buttonBuy.textContent = 'in the cart';
+    }
+
+    // Обновляем количество книг в корзине
+    updateBasketCount();
+}
+
+
 function loadBooks(category) {
     const bookContainer = document.querySelector(".section-container");
     bookContainer.innerHTML = "";
@@ -68,11 +104,11 @@ function loadBooks(category) {
         .then(data => {
 
             console.log(data); // Добавьте эту строку для вывода ответа на консоль
-
-            if (data.items && Array.isArray(data.items)) {
+            cards = data;
+            if (cards.items && Array.isArray(cards.items)) {
                 const bookContainer = document.querySelector(".section-container");
                 bookContainer.innerHTML = ""; // Очистите содержимое контейнера перед добавлением новых карточек
-                data.items.forEach(item => {
+                cards.items.forEach(item => {
                     const title = item.volumeInfo.title || 'Заголовок отсутствует';
                     const authors = item.volumeInfo.authors ? item.volumeInfo.authors.join(', ') : 'Автор неизвестен';
                     const thumbnail = item.volumeInfo.imageLinks ? item.volumeInfo.imageLinks.thumbnail : 'https://placebear.com/g/212/300';
@@ -81,7 +117,8 @@ function loadBooks(category) {
                     const description = item.volumeInfo.description || 'Описание отсутствует';
                     const retailPrice = item.saleInfo && item.saleInfo.retailPrice ? item.saleInfo.retailPrice.amount : null;
 
-                    const truncatedDescription = truncateDescription(description,91);
+                    const truncatedDescription = truncateDescription(description, 91);
+
 
                     const bookCard = document.createElement('div');
                     bookCard.classList.add('book-card');
@@ -99,6 +136,13 @@ function loadBooks(category) {
                         <button class="button-buy">buy now</button>
                         </div>
                     `;
+
+                    const buttonBuy = bookCard.querySelector('.button-buy');
+                    buttonBuy.addEventListener('click', () => addCardToBasket(item, buttonBuy)); // Передаем объект item и кнопку как аргументы
+                
+                    bookContainer.appendChild(bookCard);
+                  
+
 
                     const stars = document.createElement('div');
                     stars.classList.add('stars');
@@ -123,14 +167,25 @@ function loadBooks(category) {
         });
 }
 
-
 const categories = document.querySelectorAll('.category');
+const defaultCategory = categories[0]; // Первая категория по умолчанию
+defaultCategory.classList.add('active-category');
+
 categories.forEach(category => {
     category.addEventListener('click', function () {
-        categories.forEach(cat => cat.classList.remove('selected'));
-        this.classList.add('selected');
-        const selectedCategory = this.textContent;
-        loadBooks(selectedCategory);
+        if (!this.classList.contains('active-category')) {
+            // Убираем класс 'active-category' у текущей активной категории
+            const activeCategory = document.querySelector('.category.active-category');
+            if (activeCategory) {
+                activeCategory.classList.remove('active-category');
+            }
+
+            // Добавляем класс 'active-category' к выбранной категории
+            this.classList.add('active-category');
+
+            const selectedCategory = this.textContent;
+            loadBooks(selectedCategory);
+        }
     });
 });
 
@@ -146,11 +201,4 @@ function truncateDescription(description, maxCharacters) {
     }
 }
 
-// function truncateDescription(description) {
-//     const maxSentences = 3;
-//     const sentences = description.split(/[.]/);
-//     const truncatedSentences = sentences.slice(0, maxSentences);
-//     const truncatedDescription = truncatedSentences.join('\n') + '...';
-//     return truncatedDescription;
-// }
 

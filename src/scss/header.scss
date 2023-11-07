@@ -45,6 +45,32 @@ header {
         margin-top: 0.5%;
         padding-left: 2.8%;
 
+
+
+    }
+
+    .basket {
+        position: relative;
+    }
+
+    .basket_count {
+        background: #FF353A;
+        ;
+        border-radius: 10px;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 500;
+        height: 13px;
+        line-height: normal;
+        // padding: 0.5px 0;
+        position: absolute;
+        right: -30%;
+        text-align: center;
+        top: 44%;
+        width: 13px;
+        font-family: Montserrat;
+        text-transform: capitalize;
+        display: none; /* Начально скрываем .basket_count */
     }
 
 }

@@ -27,7 +27,9 @@ html(lang='ru')
         a 
           img.icon(href="#")(src=require('./img/search.svg'), alt='Search')
         a 
-          img.icon(href="#")(src=require('./img/shopBag.svg'), alt='ShopBag')
+          .basket
+            img.icon(href="#")(src=require('./img/shopBag.svg'), alt='ShopBag')
+            span.basket_count
     main     
       .main_slider.fixed-container
         img.main_slider-image(src=require('./img/banner1.png'), alt='Design')
@@ -54,4 +56,5 @@ html(lang='ru')
             | 2022
           img.icon(src=require('./img/arrow.svg'), alt='Arrow')   
       include ./section.pug
+      
         

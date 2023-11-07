@@ -41,7 +41,7 @@ img {
 
 img,
 svg {
-    max-width: 100%;
+    // max-width: 100%;
     height: auto;
 }
 
@@ -91,3 +91,7 @@ label {
 legend {
     display: block;
 }
+
+img, video, canvas {
+    overflow: hidden; /* Предотвращает выход содержимого за границы элемента */
+  }
