@@ -7,7 +7,7 @@ const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 
 
 module.exports = {
-  entry: path.join(__dirname, 'src', 'index.js'),
+  entry: path.join(__dirname, 'src', 'module', 'index.js'),
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'index.[contenthash:8].js',
