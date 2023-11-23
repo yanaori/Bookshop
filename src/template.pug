@@ -11,27 +11,27 @@ html(lang='ru')
   body
     header.header-container
       a 
-        .logo(href="#") Bookshop
-      ul.list
+        .header-logo(href="#") Bookshop
+      ul.header-list
         li
-          a.list__item(href="#") books
+          a.header-list_item(href="#") books
         li
-          a.list__item(href="#") audiobooks
+          a.header-list_item(href="#") audiobooks
         li
-          a.list__item(href="#") Stationery & gifts
+          a.header-list_item(href="#") Stationery & gifts
         li
-          a.list__item(href="#") blog
-      .icons 
+          a.header-list_item(href="#") blog
+      .header-icons 
         a 
-          img.icon(href="#")(src=require('./img/user.svg'), alt='User')
+          img.header-icon(href="#")(src=require('./img/user.svg'), alt='User')
         a 
-          img.icon(href="#")(src=require('./img/search.svg'), alt='Search')
+          img.header-icon(href="#")(src=require('./img/search.svg'), alt='Search')
         a 
-          .basket
-            img.icon(href="#")(src=require('./img/shopBag.svg'), alt='ShopBag')
-            span.basket_count
+          .header-basket
+            img.header-icon(href="#")(src=require('./img/shopBag.svg'), alt='ShopBag')
+            span.header-basket_count
     main     
-      .main_slider.fixed-container
+      .main_slider.main-container_fixed
         img.main_slider-image(src=require('./img/banner1.png'), alt='Design')
         img.main_slider-image(src=require('./img/banner2.png'), alt='Design')
         img.main_slider-image(src=require('./img/banner3.png'), alt='Design')
@@ -39,22 +39,22 @@ html(lang='ru')
           .main_slider-dot
           .main_slider-dot
           .main_slider-dot
-        a.square-violet(href="#")
-          p.square-text Change
+        a.main-square_violet(href="#")
+          p.main-square_text Change
             br
             | old book
             br
             | on new
-          img.icon(src=require('./img/arrow.svg'), alt='Arrow')
-        a.square-pink(href="#")
-          p.square-text top
+          img.main-icon(src=require('./img/arrow.svg'), alt='Arrow')
+        a.main-square_pink(href="#")
+          p.main-square_text top
             br
             | 100
             br
             | books
             br
             | 2022
-          img.icon(src=require('./img/arrow.svg'), alt='Arrow')   
+          img.main-icon(src=require('./img/arrow.svg'), alt='Arrow')   
       include ./section.pug
       
         

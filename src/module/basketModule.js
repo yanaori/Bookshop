@@ -1,7 +1,5 @@
-
-
 const basketItems = {};
-const basketCount = document.querySelector('.basket_count');
+const basketCount = document.querySelector('.header-basket_count');
 // Функция для обновления количества книг в корзине и видимости .basket_count
 export function updateBasketCount() {
     const itemCount = Object.keys(basketItems).length;

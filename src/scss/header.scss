@@ -1,6 +1,6 @@
 @import "variables";
 
-header {
+.header-container {
     max-width: 100%;
     display: flex;
     padding: 3% 0;
@@ -10,9 +10,10 @@ header {
     right: 0;
     left: 0;
     background-color: #fff;
+    z-index: 100;
+    gap: 13.8%;
 
-
-    .logo {
+    .header-logo {
         color: $text-black;
         font-family: Montserrat;
         font-size: 24px;
@@ -21,41 +22,45 @@ header {
         line-height: normal;
     }
 
-    .list {
+    .header-list {
         display: flex;
         gap: 10%;
         margin-left: 2.3%;
         margin-top: .4%;
         width: 28%;
 
-        .list__item {
+        .header-list_item {
             color: $text-grey;
             font-family: Montserrat;
             font-size: 10px;
             font-style: normal;
-            font-weight: 900;
+            font-weight: 700;
             line-height: normal;
             text-transform: uppercase;
         }
 
+        .header-list_item:hover,
+        .header-list_item:focus {
+            color: $text-black;
+            font-weight: 900;
+            transform: scale(1.1); /* Увеличиваем масштаб на 10% */
+            transition: transform 5s ease; /* Добавляем плавный переход */
+        }
     }
 
-    .icons {
+    .header-icons {
         gap: 26%;
         width: 11%;
         display: flex;
         margin-top: 0.4%;
         padding-left: 0.5%;
-
-
-
     }
 
-    .basket {
+    .header-basket {
         position: relative;
     }
 
-    .basket_count {
+    .header-basket_count {
         background: #FF353A;
         border-radius: 10px;
         color: #fff;
@@ -70,12 +75,10 @@ header {
         width: 13px;
         font-family: Montserrat;
         text-transform: capitalize;
-        display: none; /* Начально скрываем .basket_count */
+        display: none;
     }
-
 }
 
-.header-container {
-    z-index: 100;
-    gap: 13.8%;
-  }
+@media (max-width: 1025px) {
+
+}

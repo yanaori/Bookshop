@@ -8,59 +8,58 @@
     padding-top: 3.5%;
 
     .isade-menu {
-        width: 34%;
+        width: 47%;
 
         .isade-menu_list {
             display: flex;
             flex-direction: column;
-            padding-bottom: 39%;
-            color: $text-grey;
+            padding-bottom: 31%;
 
-
-            .category {
+            .isade-category {
                 font-family: Montserrat;
                 font-size: 12px;
                 font-weight: 500;
                 text-transform: capitalize;
-                margin-bottom: 15.9%;
-                padding-left: 15.3%;
-                color: #E3B873;
-
-
+                margin-bottom: 11.3%;
+                padding-left: 25.3%;
 
                 .category-link:not(.active-category) {
                     color: $text-grey;
                 }
+            }
 
-                .category-link:hover {
-                    color: var(--text-black, #1C2A39);
-                    font-family: Montserrat;
-                    font-size: 16px;
-                    font-weight: 700;
-                    text-transform: capitalize;
-                    transform: scaleX(0);
-                    transition: font-size 2s;
-                    transition: font-weight 2s;
-                    background-image: url(../img/Ellipse.svg);
-                    background-position: 6px 50%;
-                    background-repeat: no-repeat;
-                    padding-left: 14%;
-                }
+            .active-category {
+                color: $text-black;
+                font-family: Montserrat;
+                font-size: 16px;
+                font-weight: 700;
+                text-transform: capitalize;
+                position: relative;
+            }
 
-                .category-link:focus {
-                    color: var(--text-black, #1C2A39);
-                    font-family: Montserrat;
-                    font-size: 16px;
-                    font-weight: 700;
-                    text-transform: capitalize;
-                    background-image: url(../img/Ellipse.svg);
-                    background-position: 6px 50%;
-                    background-repeat: no-repeat;
-                    padding-left: 14%;
-                    // transform: scaleX(2);
-                    // transition: transform 0.2s ease-in-out;
-                }
+            .active-category::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: -23px;
+                transform: translateY(-50%);
+                width: 27px;
+                /* Ширина изображения */
+                height: 7px;
+                /* Высота изображения */
+                background-image: url(../img/Ellipse.svg);
+                background-repeat: no-repeat;
+            }
 
+            .category-link:hover {
+                color: $text-black;
+                font-family: Montserrat;
+                font-weight: 700;
+                text-transform: capitalize;
+                transform: scale(1.1);
+                /* Увеличиваем масштаб на 10% */
+                transition: transform 0.3s ease;
+                /* Добавляем плавный переход */
             }
         }
     }

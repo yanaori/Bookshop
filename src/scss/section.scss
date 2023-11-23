@@ -1,4 +1,6 @@
 .section-container_fixed {
+    max-width: 1120px;
+    margin: 0 auto;
 
     .section-container {
 
@@ -9,20 +11,19 @@
             display: flex;
             flex-wrap: wrap;
             width: 100%;
-            gap: 3.5%;
+            gap: 6.5%;
             position: absolute;
             margin-top: -46%;
 
             .book-card {
                 display: flex;
                 gap: 36px;
-                margin-bottom: 8.7%;
+                margin-bottom: 8.4%;
 
                 .image {
                     width: 212px;
                     height: 300px;
-                    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-
+                    filter: drop-shadow($shadow-black);
                 }
 
                 .info-books {
@@ -53,10 +54,6 @@
                         display: flex;
                         max-width: 80%;
                         margin-bottom: 12px;
-
-                        .average-rating {
-                            fill: #F2C94C;
-                        }
 
                         .ratings-count {
                             color: $text-grey;
@@ -89,33 +86,32 @@
                     }
 
                     .button-buy {
-                        color: #4C3DB2;
+                        color: $button;
                         font-family: Montserrat;
                         font-size: 8px;
                         font-weight: 700;
                         text-transform: uppercase;
                         width: 176px;
                         height: 45px;
-                        // padding: 9.4% 35%;
-                        border: 1px solid #4C3DB2;
-                        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-
+                        border: 1px solid $button;
+                        filter: drop-shadow($shadow-black);
                     }
                 }
             }
+            
             .books-button_more {
-                color: #4C3DB2;
+                color: $button;
                 font-family: Montserrat;
                 font-size: 8px;
                 font-weight: 700;
                 text-transform: uppercase;
                 display: flex;
                 justify-content: space-around;
-                margin-left: 41.8%;
-                padding: 1.8% 3.5%;
-                width: 18.8%;
-                border: 1px solid #4C3DB2;
-                filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                margin-left: 34.2%;
+                padding: 1.5% 3.5%;
+                width: 15.8%;
+                border: 1px solid $button;
+                filter: drop-shadow($shadow-black);
                 margin-bottom: 10.5%;
                 order: 999;
             }
