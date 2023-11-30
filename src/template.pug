@@ -12,6 +12,7 @@ html(lang='ru')
     header.header-container
       a 
         .header-logo(href="#") Bookshop
+      button.header-button_drop-down Menu
       ul.header-list
         li
           a.header-list_item(href="#") books
@@ -55,6 +56,4 @@ html(lang='ru')
             br
             | 2022
           img.main-icon(src=require('./img/arrow.svg'), alt='Arrow')   
-      include ./section.pug
-      
-        
+      include ./section.pug          

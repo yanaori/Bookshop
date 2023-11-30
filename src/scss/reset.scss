@@ -91,6 +91,9 @@ legend {
     display: block;
 }
 
-img, video, canvas {
-    overflow: hidden; /* Предотвращает выход содержимого за границы элемента */
-  }
+img,
+video,
+canvas {
+    overflow: hidden;
+    /* Предотвращает выход содержимого за границы элемента */
+}

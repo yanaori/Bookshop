@@ -1,4 +1,4 @@
-export let currentSlide = 0; 
+export let currentSlide = 0;
 
 export function showSlide(index, mainSliderImage, mainSliderDots) {
     mainSliderImage.forEach((image, i) => {
@@ -21,13 +21,11 @@ export function showSlide(index, mainSliderImage, mainSliderDots) {
 }
 
 export function setSliderByDot(dotIndex, mainSliderImage, mainSliderDots) {
-    console.log('setSliderByDot:', mainSliderImage, mainSliderDots); 
     currentSlide = dotIndex;
     showSlide(currentSlide, mainSliderImage, mainSliderDots);
 }
 
 export function nextSlide(mainSliderImage, mainSliderDots) {
-    console.log('nextSlide:', mainSliderImage, mainSliderDots); 
     currentSlide = (currentSlide + 1) % mainSliderImage.length;
     showSlide(currentSlide, mainSliderImage, mainSliderDots);
 }

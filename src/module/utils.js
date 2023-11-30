@@ -1,4 +1,3 @@
-
 function truncateDescription(description, maxCharacters) {
     if (description.length <= maxCharacters) {
         return description; // Если текст короче или равен максимальному количеству символов, не обрезаем его

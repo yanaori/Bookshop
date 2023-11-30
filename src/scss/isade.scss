@@ -64,3 +64,39 @@
         }
     }
 }
+
+@media screen and (max-width: 1025px) {
+    .isade-container {
+        max-width: 23%;
+
+        .isade-menu {
+
+            .isade-menu_list {
+
+                .active-category {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .isade-container {
+        max-width: 33%;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .isade-container {
+        max-width: 47%;
+        transition: 1s;
+        transform: translateX(-100%);
+    }
+
+    .menu_active {
+        transform: translateX(0%);
+        position: relative;
+        z-index: 8;
+    }
+}

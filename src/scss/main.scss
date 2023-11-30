@@ -3,6 +3,7 @@
 @import "variables";
 @import "isade";
 @import "section";
+@import "burger";
 
 body {
   background: #FFF;
@@ -31,6 +32,7 @@ body {
       border-radius: 50%;
       background: $background-violet;
     }
+
     .main_slider-dot:not(.active) {
       background-color: #EFEEF6;
     }
@@ -48,10 +50,10 @@ body {
     width: 10.45%;
     position: absolute;
     right: 5.1%;
-    top: 22.3%;
+    top: 24.3%;
     padding-top: 7%;
     padding-left: 1.4%;
-  
+
     .main-square_text {
       color: $text-black;
       font-family: Montserrat;
@@ -59,7 +61,7 @@ body {
       font-weight: 700;
       text-transform: uppercase;
     }
-  
+
     .main-icon {
       padding-bottom: 16%;
     }
@@ -69,11 +71,11 @@ body {
     background: #FF8FE6;
     width: 9.6%;
     right: 0%;
-    top: 54.5%;
+    top: 58.5%;
     position: absolute;
     padding-top: 10.5%;
     padding-left: 1.5%;
-  
+
     .main-square_text {
       color: $text-black;
       font-family: Montserrat;
@@ -81,12 +83,114 @@ body {
       font-weight: 700;
       text-transform: uppercase;
     }
-  
+
     .main-icon {
       padding-bottom: 16%;
     }
   }
 }
+
 .active {
   background-color: $background-violet;
+}
+
+@media screen and (max-width: 1025px) {
+  .main-container_fixed {
+    max-width: 810px;
+
+    .main_slider-image {
+      margin-top: 11.3%;
+    }
+
+    .main-square_violet {
+      right: 2.1%;
+      top: 27.3%;
+      padding-top: 5%;
+      padding-left: 1%;
+
+      .main-square_text {
+        font-size: 14px;
+      }
+    }
+
+    .main-square_pink {
+      padding-top: 7.5%;
+
+      .main-square_text {
+        font-size: 14px;
+      }
+
+      .main-icon {
+        padding-bottom: 16%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .main-container_fixed {
+    max-width: 600px;
+
+    .main-square_violet {
+      top: 19.3%;
+      padding-top: 3%;
+
+      .main-square_text {
+        font-size: 12px;
+      }
+
+      .main-icon {
+        width: 75%;
+      }
+    }
+
+    .main-square_pink {
+      padding-top: 4.5%;
+      top: 40.5%;
+
+      .main-square_text {
+        font-size: 12px;
+      }
+
+      .main-icon {
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .main-container_fixed {
+    max-width: 360px;
+
+    .main_slider-image {
+      margin-top: 13.3%;
+    }
+
+    .main-square_violet {
+      top: 9.3%;
+      padding-top: 3%;
+
+      .main-square_text {
+        font-size: 8px; //
+      }
+
+      .main-icon {
+        width: 75%;
+      }
+    }
+
+    .main-square_pink {
+      padding-top: 4.5%;
+      top: 25.5%;
+
+      .main-square_text {
+        font-size: 8px; //
+      }
+
+      .main-icon {
+        width: 80%;
+      }
+    }
+  }
 }

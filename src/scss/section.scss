@@ -2,10 +2,14 @@
     max-width: 1120px;
     margin: 0 auto;
 
+    .section-menu-btn {
+        display: none;
+    }
+
     .section-container {
 
         .section-container_book {
-            max-width: 1124px;
+            max-width: 1100px;
             margin-top: 13%;
             margin-left: 13.6%;
             display: flex;
@@ -98,7 +102,7 @@
                     }
                 }
             }
-            
+
             .books-button_more {
                 color: $button;
                 font-family: Montserrat;
@@ -114,6 +118,155 @@
                 filter: drop-shadow($shadow-black);
                 margin-bottom: 10.5%;
                 order: 999;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1025px) {
+    .section-container_fixed {
+        max-width: 960px;
+
+        .section-container {
+
+            .section-container_book {
+                max-width: 852px;
+                gap: 5.5%;
+                margin-top: -54%;
+                padding-left: 5%;
+
+                .book-card {
+                    gap: 28px;
+
+                    .image {
+                        width: 169.6px;
+                        height: 240px;
+                    }
+
+                    .info-books {
+
+                        .button-buy {
+                            width: 158.4px;
+                            height: 40.5px;
+                            font-size: 9px;
+                        }
+                    }
+                }
+
+                .books-button_more {
+                    font-size: 9px;
+                    margin-left: 38.2%;
+                    padding: 2% 3.8%;
+                    width: 19.8%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .section-container_fixed {
+        max-width: 768px;
+
+        .section-container {
+
+            .section-container_book {
+                max-width: 482px;
+                margin-top: -71%;
+                transition: 0.5s;
+                position: relative;
+                margin-left: 26.6%;
+
+                .book-card {
+                    margin-bottom: 9.4%;
+
+                    .image {
+                        width: 212px;
+                        height: 300px;
+                    }
+
+                    .info-books {
+
+                        .button-buy {
+                            width: 145px;
+                        }
+                    }
+                }
+
+                .books-button_more {
+                    padding: 2.5% 3.8%;
+                    width: 27.8%;
+                    margin-left: 26.2%;
+                }
+            }
+
+            .section-container_book-active {
+                transform: translateX(150%);
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .section-container_fixed {
+        max-width: 374px;
+
+        .section-menu-btn {
+            position: absolute;
+            z-index: 10;
+            display: flex;
+            top: 49%;
+            left: 0%;
+        }
+
+        .section-container {
+
+            .section-container_book {
+                max-width: 340px;
+                margin-top: -137%;
+                transition: 0.5s;
+                position: relative;
+                margin-left: 4.6%;
+
+                .book-card {
+                    margin-bottom: 9.4%;
+
+                    .image {
+                        width: 127.2px;
+                        height: 180px;
+                    }
+
+                    .title {
+                        font-size: 14px;
+                    }
+
+                    .info-books {
+
+
+                        .title {
+                            font-size: 14px;
+                        }
+
+                        .ratings-box {
+                            margin-bottom: 2px;
+                        }
+
+                        .description {
+                            margin-bottom: 8px;
+                        }
+
+                        .button-buy {
+                            width: 120px;
+                        }
+                    }
+                }
+
+                .books-button_more {
+                    padding: 4.3% 3.8%;
+                    width: 39.8%;
+                    margin-left: 26.2%;
+                }
             }
         }
     }
