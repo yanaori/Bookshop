@@ -1,4 +1,4 @@
-const basketItems = {};
+let basketItems = {};
 const basketCount = document.querySelector('.header-basket_count');
 // Функция для обновления количества книг в корзине и видимости .basket_count
 export function updateBasketCount() {
@@ -11,6 +11,9 @@ export function updateBasketCount() {
     } else {
         basketCount.style.display = 'none'; // Скрываем .basket_count при пустой корзине
     }
+
+    // Сохраняем корзину в localStorage
+    localStorage.setItem('basketItems', JSON.stringify(basketItems));
 }
 // Функция для добавления книги в корзину
 export function addCardToBasket(book, buttonBuy) {
@@ -30,3 +33,15 @@ export function addCardToBasket(book, buttonBuy) {
     // Обновляем количество книг в корзине
     updateBasketCount();
 }
+
+// При загрузке страницы извлекаем корзину из localStorage
+document.addEventListener('DOMContentLoaded', () => {
+    const storedBasketItems = localStorage.getItem('basketItems');
+    if (storedBasketItems) {
+        basketItems = JSON.parse(storedBasketItems);
+        updateBasketCount();
+
+        console.log(localStorage);
+    }
+});
+
